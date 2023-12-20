@@ -54,19 +54,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * -------------------------------------------.                              ,-------------------------------------------.
  * |  Tab  |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  Bksp  |
  * |-------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * | Shift |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | - _  |  =  +  |
+ * | Menu  |   A  |   S  |   D  |   F  |   G  |                              |   H  |   J  |   K  |   L  | - _  |  =  +  |
  * |-------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | Ctr   |   Z  |   X  |   C  |   V  |   B  | Nav  |Encod.|  |Encod.|  Sym |   N  |   M  |  ; : | ' "  | [ {  |   ] }  |
+ * | Shift |   Z  |   X  |   C  |   V  |   B  | Func |Encod.|  |Encod.| Enter|   N  |   M  |  ; : | ' "  | [ {  |   ] }  |
  * ----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                       | LGUI | LAlt | RAlt | Space|F-Keys|  | Menu | Enter| ,  < | . >  | /  ? |
+ *                       | Ctrl | LGUI | LAlt | Space| Nav  |  | Sym  | Space| ,  < | . >  | /  ? |
  *                       |      |      |      |      |      |  |      |      |      |      |      |
  *                       `----------------------------------'  `----------------------------------'
  */
     [_QWERTY] = LAYOUT(
-     KC_TAB   , KC_Q ,  KC_W   ,  KC_E   ,   KC_R  ,   KC_T ,                                          KC_Y  ,   KC_U ,  KC_I ,   KC_O   ,  KC_P , KC_BSPC,
-     KC_LCTL  , KC_A ,  KC_S   ,  KC_D   ,   KC_F  ,   KC_G ,                                          KC_H  ,   KC_J ,  KC_K ,   KC_L   ,KC_MINS, KC_EQL ,
-     KC_LSFT  , KC_Z ,  KC_X   ,  KC_C   ,   KC_V  ,   KC_B , FKEYS    , _______,     _______ ,KC_APP, KC_N  ,   KC_M ,KC_SCLN, KC_QUOTE ,KC_LBRC, KC_RBRC,
-                                KC_LGUI , KC_LALT, KC_RALT, KC_SPC , NAV    ,         SYM     ,KC_ENT,KC_COMM, KC_DOT,KC_SLSH
+     KC_TAB   , KC_Q ,  KC_W   ,  KC_E   ,   KC_R  ,   KC_T ,                                          KC_Y    ,  KC_U  ,  KC_I   ,   KC_O   ,  KC_P , KC_BSPC,
+     KC_APP   , KC_A ,  KC_S   ,  KC_D   ,   KC_F  ,   KC_G ,                                          KC_H    ,  KC_J  ,  KC_K   ,   KC_L   ,KC_MINS, KC_EQL ,
+     KC_LSFT  , KC_Z ,  KC_X   ,  KC_C   ,   KC_V  ,   KC_B , FKEYS  , _______,     _______ ,KC_ENT ,  KC_N    ,  KC_M  ,  KC_SCLN, KC_QUOTE ,KC_LBRC, KC_RBRC,
+                                KC_LCTL  , KC_LGUI , KC_LALT, KC_SPC , NAV    ,         SYM ,KC_SPC ,  KC_COMM ,  KC_DOT,  KC_SLSH
     ),
 
 /*
@@ -75,19 +75,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-------------------------------------------.                              ,-------------------------------------------.
  * |  Esc   |      |      |      |      |      |                              | PgUp | Home |   ↑  | End  | VolUp| Delete |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |Caps Lck|  GUI |  Alt | Ctrl | Shift|      |                              | PgDn |  ←   |   ↓  |   →  | VolDn| Insert |
+ * |        |  GUI |  Alt | Ctrl | Shift|      |                              | PgDn |  ←   |   ↓  |   →  | VolDn| Insert |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |      |      |      |      |      |      |      |  |             | Pause|M Prev|M Play|M Next|VolMut| PrtSc  |
+ * |Caps Lck|      |      |      |      |      |      |      |  |      |   ↑  | Pause|M Prev|M Play|M Next|VolMut| PrtSc  |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        | RCtrl|      | RAlt |      |      |  |   ←  |   ↓  |   →  |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_NAV] = LAYOUT(
       KC_ESC , _______, _______, _______, _______, _______,                                     KC_PGUP, KC_HOME, KC_UP,   KC_END,  KC_VOLU, KC_DEL,
-      KC_CAPS, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+      _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLD, KC_INS,
+      KC_CAPS, _______, _______, _______, _______, _______, _______, _______, _______, KC_UP  ,KC_PAUSE, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_PSCR,
+                                 KC_RCTL, _______, KC_RALT, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______
     ),
 
 /*
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
  * |    |   |   \  |  :   |  ;   |  -   |  [   |  {   |      |  |      |   }  |   ]  |  _   |  ,   |  .   |  /   |   ?    |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        |      |      |      |      |      |  |      |      |      |      |      |
+ *                        | Ctrl |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
@@ -108,28 +108,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_GRV ,   KC_1 ,   KC_2 ,   KC_3 ,   KC_4 ,   KC_5 ,                                       KC_6 ,   KC_7 ,   KC_8 ,   KC_9 ,   KC_0 , KC_EQL ,
      KC_TILD , KC_EXLM,  KC_AT , KC_HASH,  KC_DLR, KC_PERC,                                     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
      KC_PIPE , KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______, _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM,  KC_DOT, KC_SLSH, KC_QUES,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+                                 KC_LCTL, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 /*
  * Function Layer: Function keys
  *
  * ,-------------------------------------------.                              ,-------------------------------------------.
- * |        |  F9  | F10  | F11  | F12  |      |                              |      |      |      |      |      |        |
+ * |   F1   |  F2  | F3   | F4   | F5   |  F6  |                              |  F7  | F8   |  F9  | F10  | F11  |  F12   |
  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * |        |  F5  |  F6  |  F7  |  F8  |      |                              |      | Shift| Ctrl |  Alt |  GUI |        |
+ * |   F1   |  F2  | F3   | F4   | F5   |  F6  |                              |  F7  | F8   |  F9  | F10  | F11  |  F12   |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * |        |  F1  |  F2  |  F3  |  F4  |      |      |      |  |      |      |      |      |      |      |      |        |
+ * |  F1    |  F2  | F3   | F4   | F5   |  F6  |      |      |  |      |      |  F7  | F8   |  F9  | F10  | F11  |  F12   |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        |      |      |      |      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
     [_FUNCTION] = LAYOUT(
-      _______,  KC_F9 ,  KC_F10,  KC_F11,  KC_F12, _______,                                     _______, _______, _______, _______, _______, _______,
-      _______,  KC_F5 ,  KC_F6 ,  KC_F7 ,  KC_F8 , _______,                                     _______, KC_RSFT, KC_RCTL, KC_LALT, KC_RGUI, _______,
-      _______,  KC_F1 ,  KC_F2 ,  KC_F3 ,  KC_F4 , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+      KC_F1,  KC_F2 ,  KC_F3,  KC_F4,  KC_F5, KC_F6,                                     KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,
+      KC_F1,  KC_F2 ,  KC_F3,  KC_F4,  KC_F5, KC_F6,                                     KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,
+      KC_F1,  KC_F2 ,  KC_F3,  KC_F4,  KC_F5, KC_F6, _______, _______, _______, _______, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,
+                             _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
 /*
@@ -265,9 +265,9 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         // Volume control
         if (clockwise) {
-            tap_code(KC_WH_U);
+            tap_code(KC_VOLU);
         } else {
-            tap_code(KC_WH_D);
+            tap_code(KC_VOLD);
         }
     } else if (index == 1) {
         // Page up/Page down
