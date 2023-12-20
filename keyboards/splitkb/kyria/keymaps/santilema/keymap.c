@@ -213,12 +213,6 @@ bool oled_task_user(void) {
             case _QWERTY:
                 oled_write_P(PSTR("Base\n"), false);
                 break;
-            case _DVORAK:
-                oled_write_P(PSTR("Dvorak\n"), false);
-                break;
-            case _COLEMAK_DH:
-                oled_write_P(PSTR("Colemak-DH\n"), false);
-                break;
             case _NAV:
                 oled_write_P(PSTR("Alt\n"), false);
                 break;
@@ -226,10 +220,7 @@ bool oled_task_user(void) {
                 oled_write_P(PSTR("Sym\n"), false);
                 break;
             case _FUNCTION:
-                oled_write_P(PSTR("Func\n"), false);
-                break;
-            case _ADJUST:
-                oled_write_P(PSTR("Adjust\n"), false);
+                oled_write_P(PSTR("Function\n"), false);
                 break;
             default:
                 oled_write_P(PSTR("Undefined\n"), false);
